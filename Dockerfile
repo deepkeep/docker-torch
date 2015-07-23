@@ -1,8 +1,7 @@
 FROM ubuntu:trusty
 MAINTAINER deepkeep.co
 
-# readd update
-RUN apt-get install -y curl
+RUN apt-get update && apt-get install -y curl
 RUN curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
 
 ENV TORCH /usr/local/torch
